@@ -16,8 +16,8 @@ body {
 div#root {
   height: 100%;
   width: 100%;
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 500px;
+  max-height: 500px;
 }
 
 main {
@@ -40,12 +40,14 @@ main {
   font-weight: 400;
   margin-top: 0;
   text-align: center;
+  max-width: 40ch;
 }
 
 .dice-container {
   display: grid;
   grid-template: auto auto / repeat(5, 1fr);
   gap: 20px;
+  margin: 2rem;
 }
 
 button {
@@ -66,10 +68,25 @@ button {
 
 button.roll-dice {
   height: 50px;
-  width: 100px;
+  white-space: nowrap;
+  width: auto;
+  padding: 6px 21px;
+  margin-top: 2rem;
+  border: none;
   border-radius: 6px;
   background-color: #5035ff;
   color: white;
   font-size: 1.2rem;
-  margin-top: 2rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
