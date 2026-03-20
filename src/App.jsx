@@ -5,6 +5,7 @@ import Confetti from "react-confetti";
 
 export default function App() {
   const [dice, setDice] = useState(generateAllNewDice());
+  const [count, setCount] = useState(0);
 
   let gameWon =
     dice.every((die) => die.isHeld) &&
@@ -24,8 +25,10 @@ export default function App() {
         !item.isHeld ? { ...item, value: Math.ceil(Math.random() * 6) } : item,
       ),
     );
+    setCount(count + 1);
 
     if (gameWon) {
+      setCount(0);
       setDice(generateAllNewDice());
     }
   }
@@ -75,6 +78,12 @@ export default function App() {
         <button className="roll-dice" onClick={rollDice} ref={buttonRef}>
           {gameWon ? "New game" : "Roll"}
         </button>
+
+        <p>
+          {gameWon
+            ? `Congrats! You have won the game. You rolled ${count} times.`
+            : `Roll Count : ${count} `}
+        </p>
       </main>
     </>
   );
