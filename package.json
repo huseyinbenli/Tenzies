@@ -1,5 +1,6 @@
 {
   "name": "tenzies",
+  "homepage": "https://huseyinbenli.github.io/Tenzies/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,9 +8,12 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "nanoid": "^5.1.7",
     "react": "^19.2.4",
     "react-confetti": "^6.4.0",
